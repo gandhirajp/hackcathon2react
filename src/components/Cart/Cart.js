@@ -62,14 +62,7 @@ const Cart = () => {
 
                         </div>
                     </div>
-                    <div className='row m-3 p-2  d-flex justify-content-center'>
-                        <div className='col-lg-4 pad'>
-
-                            <input type="text" className='form-control mt-2'  onChange={(e)=>setAmount(e.target.value)} required
-                                name='amo' value={amount}></input>
-
-                        </div>
-                    </div>
+                   
                     <div className='row m-3 p-2  d-flex justify-content-center'>
                         <div className='col-lg-4  pad'>
                             <button type="submit" className='btn btn-primary form-control ' onClick={handleSubmit} >Pay</button>
