@@ -65,7 +65,7 @@ const Cart = () => {
                    
                     <div className='row m-3 p-2  d-flex justify-content-center'>
                         <div className='col-lg-4  pad'>
-                            <button type="submit" className='btn btn-primary form-control ' onClick={handleSubmit} >Pay</button>
+                            <button type="submit" className='btn btn-primary form-control '  >Pay</button>
                         </div>
                     </div>
 
