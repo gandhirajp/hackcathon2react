@@ -1,6 +1,6 @@
 import "./Cart.css"
-import React, { useState } from 'react'
-import { Formik, useFormik } from 'formik';
+import React from 'react'
+import {  useFormik } from 'formik';
 import { useNavigate } from 'react-router-dom'
 import axios from "axios";
 
@@ -10,7 +10,6 @@ const Cart = () => {
         initialValues: {
             start: "",
             end: "",
-            amo:"",
             quanty: "0"
 
         },
