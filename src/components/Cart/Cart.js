@@ -27,40 +27,7 @@ const Cart = () => {
         }
 
     })
-    const [amount, setAmount] = useState('');
-    const handleSubmit = (e) => {
-        e.preventDefalt();
-        if (amount === "") {
-            alert("Plese enter Amount")
-        }
-        else {
-            var options = {
-                keey: "rzp_test_f9WknVgMZO3FyP",
-                key_secret: "SsYKw6hthJbJg0qxQ4bKIlBU",
-                amount: amount * 100,
-                currency: "INR",
-                name: "Smaiga",
-                description: "Easy to pay",
-                handler: function (response) {
-                    alert(response.razorpay_payment_i);
-                },
-                prefill: {
-                    name: "Gandhiraj",
-                    email: "gandhiraj007p@gmail.com",
-                    contact: "8825793748"
-                },
-                notes: {
-                    address: "Razorpay Corporate office"
-                },
-                theme: {
-                    color: "# 3399cc"
-                }
-
-            };
-            var pay = new window.Razorpay(options);
-            pay.open();
-        }
-    }
+   
 
 
     return (
