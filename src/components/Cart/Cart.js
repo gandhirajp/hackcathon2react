@@ -10,7 +10,7 @@ const Cart = () => {
         initialValues: {
             start: "",
             end: "",
-            amo: "",
+            amo:"",
             quanty: "0"
 
         },
@@ -50,27 +50,33 @@ const Cart = () => {
                         <div className='col-lg-4 pad'>
                             <lable>End Date and Time</lable>
                             <input type="datetime-local" className='form-control mt-2' onChange={formik.handleChange} required
-                                name='end' value={formik.values.end} ></input> 
+                                name='end' value={formik.values.end} ></input>
 
                         </div>
                     </div>
                     <div className='row m-3 p-2  d-flex justify-content-center'>
                         <div className='col-lg-4 pad'>
                             <lable className='text-center'>No of Cars</lable>
-                            <input type="number" className='form-control mt-2' onChange={formik.handleChange} required
+                            <input type="number" className='form-control mt-2'  onChange={formik.handleChange} required
                                 name='quanty' value={formik.values.quanty}></input>
 
                         </div>
                     </div>
+                    <div className='row m-3 p-2  d-flex justify-content-center'>
+                        <div className='col-lg-4 pad'>
 
+                            <input type="text" className='form-control mt-2'  onChange={(e)=>setAmount(e.target.value)} required
+                                name='amo' value={amount}></input>
+
+                        </div>
+                    </div>
                     <div className='row m-3 p-2  d-flex justify-content-center'>
                         <div className='col-lg-4  pad'>
-                            <button  className='btn btn-primary form-control ' onClick={handleSubmit} >Pay</button>
+                            <button type="submit" className='btn btn-primary form-control ' onClick={handleSubmit} >Pay</button>
                         </div>
                     </div>
 
-                </form> 
-               
+                </form>
 
             </div>
         </>
