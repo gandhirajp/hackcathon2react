@@ -15,7 +15,8 @@ const Cart = () => {
         },
         onSubmit: async values => {
             try {
-                await axios.post("https://model-react.herokuapp.com/cart", values)
+                 await axios.post("https://model-react.herokuapp.com/cart",values)
+                // await axios.post("http://localhost:3001/cart",values)
                 navigate("/")
                 alert("saved");
             }
