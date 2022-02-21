@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useFormik } from 'formik';
 import React from 'react'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import "./Register.css"
 
 function Register() {
@@ -14,12 +14,11 @@ function Register() {
     },
     onSubmit: async (values) => {
       try {
-        let loginData = await axios.post(" https://model-react.herokuapp.com/register",values)
-        // let loginData = await axios.post("http://localhost:3001/register",values)
+        let loginData = await axios.post("https://carrentalfront.herokuapp.com/register", values)
         navigate("/login")
 
       } catch (error) {
-        console.log(error) 
+        console.log(error)
       }
     }
   });
@@ -57,10 +56,10 @@ function Register() {
                   value={formik.values.password}
                 />
               </div>
-              <div className='submit text-center'>
-               
-                <button type="submit" className='btn btn-primary mt-3 mb-4 ' >Submit</button>
-               
+              <div className='submit text-center'> 
+                <Link to="/login">
+                  <button type="submit" className='btn btn-primary mt-3 mb-3 col-lg-6' >SignUp</button>
+                </Link>
               </div>
 
 

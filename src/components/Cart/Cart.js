@@ -1,7 +1,7 @@
 import "./Cart.css"
 import React from 'react'
-import {  useFormik } from 'formik';
-import { useNavigate } from 'react-router-dom'
+import { useFormik } from 'formik';
+import { Link, useNavigate } from 'react-router-dom'
 import axios from "axios";
 
 const Cart = () => {
@@ -15,7 +15,7 @@ const Cart = () => {
         },
         onSubmit: async values => {
             try {
-                 await axios.post("https://model-react.herokuapp.com/cart",values)
+                await axios.post("https://carrentalfront.herokuapp.com/cart", values)
                 // await axios.post("http://localhost:3001/cart",values)
                 navigate("/")
                 alert("saved");
@@ -27,7 +27,7 @@ const Cart = () => {
         }
 
     })
-   
+
 
 
     return (
@@ -57,16 +57,20 @@ const Cart = () => {
                     <div className='row m-3 p-2  d-flex justify-content-center'>
                         <div className='col-lg-4 pad'>
                             <lable className='text-center'>No of Cars</lable>
-                            <input type="number" className='form-control mt-2'  onChange={formik.handleChange} required
+                            <input type="number" className='form-control mt-2' onChange={formik.handleChange} required
                                 name='quanty' value={formik.values.quanty}></input>
 
                         </div>
                     </div>
-                   
+
                     <div className='row m-3 p-2  d-flex justify-content-center'>
                         <div className='col-lg-4  pad'>
+                            <Link to="/">
                             <button type="submit" className='btn btn-primary form-control '  >Pay</button>
+                            </Link>
                         </div>
+                       
+                                   
                     </div>
 
                 </form>

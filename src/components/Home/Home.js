@@ -1,8 +1,21 @@
-import React, { useState } from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
 import "./Home.css";
 
 const Home = () => {
- 
+  useEffect(async () => {
+    try {
+        let dashboard = await axios.get("http://localhost:3001/home", {
+            headers: {
+                Authorization: window.localStorage.getItem("my_token")
+            }
+        })
+        console.log(dashboard.data.authorization)
+    } catch (error) {
+        console.log(error)
+    }
+}, [])
+
 
   return (
     <>
